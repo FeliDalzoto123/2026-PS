@@ -11,7 +11,7 @@
 from conversores import (
     celsius_para_fahrenheit, celsius_para_kelvin, fahrenheit_para_celsius,
     km_para_milhas, milhas_para_km, metros_para_pés,
-    kg_para_libras, libras_para_kg
+    kg_para_libras, kg_para_g
 )
 
 from utils import cabecalho_secao, formatar_resultado, linha_separadora
@@ -35,7 +35,7 @@ def menu_massa():
     print(cabecalho_secao("Conversão de Massa"))
     valor = float(input("Valor em kg: "))
     print(formatar_resultado("kg ➡️ lb", valor, "kg", kg_para_libras(valor), "lb"))
-    print(formatar_resultado("lb ➡️ kg", valor, "lb", libras_para_kg(valor), "kg"))
+    print(formatar_resultado("kg ➡️ g", valor, "kg", kg_para_g(valor), "g"))
 
 
 def main():

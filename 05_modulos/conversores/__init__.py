@@ -3,13 +3,13 @@
 
 from .temperatura import celsius_para_fahrenheit, celsius_para_kelvin, fahrenheit_para_celsius
 from .distancia import km_para_milhas, milhas_para_km, metros_para_pés
-from .massa import kg_para_libras, libras_para_kg
+from .massa import kg_para_libras, kg_para_g
 
 # O "." antes do nome = importação relativa (módulo dentro DESTE pacote)
 
 __all__ = [
     "celsius_para_fahrenheit", "celsius_para_kelvin", "fahrenheit_para_celsius",
     "km_para_milhas", "milhas_para_km", "metros_para_pés",
-    "kg_para_libras", "libras_para_kg"
+    "kg_para_libras", "kg_para_g"
 ]
 
