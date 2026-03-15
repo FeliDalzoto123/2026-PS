@@ -10,7 +10,7 @@
 #
 # DESCRIÇÃO:
 # Este Programa processa as notas de uma turma e determina
-# a situação de cada aluno (Provadpo, Recuperação ou Reprovado).
+# a situação de cada aluno (Aprovado, Recuperação ou Reprovado).
 # Conceitos utilizados: variaveis, tipos de dados, operadores,
 # estruturas de seleção e estrutura de repetição.
 # =============================================
