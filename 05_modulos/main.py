@@ -11,6 +11,7 @@
 from conversores import (
     celsius_para_fahrenheit, celsius_para_kelvin, fahrenheit_para_celsius,
     km_para_milhas, milhas_para_km, metros_para_pés,
+    kg_para_libras, libras_para_kg
 )
 
 from utils import cabecalho_secao, formatar_resultado, linha_separadora
@@ -30,16 +31,22 @@ def menu_distancia():
     print(formatar_resultado("km ➡️  mi", valor, "km", km_para_milhas(valor), "mi"))
     print(formatar_resultado("km ➡️  pés", valor * 1000, "m", metros_para_pés(valor * 1000), "pés"))
 
+def menu_massa():
+    print(cabecalho_secao("Conversão de Massa"))
+    valor = float(input("Valor em kg: "))
+    print(formatar_resultado("kg ➡️ lb", valor, "kg", kg_para_libras(valor), "lb"))
+    print(formatar_resultado("lb ➡️ kg", valor, "lb", libras_para_kg(valor), "kg"))
+
 
 def main():
     print(linha_separadora())
     print(" SISTEMA DE CONVERSÃO DE UNIDADES")
     print(linha_separadora())
 
-    opcoes = {"1": menu_temperatura, "2": menu_distancia}
+    opcoes = {"1": menu_temperatura, "2": menu_distancia, "3": menu_massa}
 
     while True:
-        print("\n [1] Temperatura  [2] Distância  [0] Sair")
+        print("\n [1] Temperatura  [2] Distância  [3] Massa  [0] Sair")
         escolha = input(" Opção: ").strip()
         if escolha == "0":
             print("\nSistema encerrado.")
