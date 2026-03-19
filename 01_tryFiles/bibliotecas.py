@@ -172,7 +172,7 @@ def  devolver_livros(catalogo):
 # --- Bloco 6 ---
 
 def menu():
-    print("\n SISTEMA DE BIBLIOTECA - v1 (em memória)")
+    print("\n SISTEMA DE BIBLIOTECA - v2 (em memória)")
 
     opcoes = {
         "1": ("Listar Livros", listar_livros),
