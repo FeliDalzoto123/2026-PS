@@ -106,7 +106,7 @@ def buscar_livros(catalogo):
         resultados = [l for l in catalogo if termo in l["titulo"].lower()]
 
         if not resultados:
-            print(" Nenhum livor encontrado.")
+            print(" Nenhum livro encontrado.")
             return
         print(f"\n {len(resultados)} resultado(s): ")
         for livro in resultados:
