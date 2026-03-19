@@ -1,3 +1,52 @@
+# Centralizar o nome evita erros de digitação em todo o código
+ARQUIVO = "biblioteca.txt"
+SEPARADOR = "|"     # separa campos em cada linha do .txt
+
+# Formato de cada linha no arquivo:
+#  titulo|autor|disponivel
+# Exemplo:
+#  Código Limpo|Robert C. Martin|False
+
+def carregar_catalogo():
+    """Lê o .txt e reconstrói a lista de dicionários."""
+    catalogo = []
+    try:
+        # 'r' - leitura | enconding-'utf-8' garante acenots corretos
+        with open(ARQUIVO, "r", encoding="utf-8") as f:
+            for linha in f:
+                linha = linha.strip()
+                if not linha:       # ignora linhas vazias
+                    continue
+                partes = linha.split(SEPARADOR)
+                if len(partes) !=3:  # linha malformada → pula
+                    continue
+                titulo, autor, disponivel_str = partes
+                catalogo.append({
+                    "titulo": titulo,
+                    "autor": autor,
+                    # a string "True no arquivo precisa virar bool True"
+                    "disponivel": disponivel_str == "True"
+                })
+
+    except FileNotFoundError:
+        pass # primeira execução: arquivo ainda não existe - tudo bem
+    return catalogo
+
+def salvar_catalogo(catalogo):
+    """Grava toda a lsta no arquivo .txt."""
+    try:
+        # 'w' = write: cria se não existir, sobrescreve se existir
+        with open(ARQUIVO, "w", encoding="utf-8") as f:
+            for livro in catalogo:
+                linha = f"{livro['titulo']} {SEPARADOR} {livro['autor']} {SEPARADOR} {livro['disponivel']}\n"
+                f.write(linha)
+                print(f" Catálogo salvo em '{ARQUIVO}'.")
+    except IOError as e:
+        # IOError: disco cheio, permissão negada, etc.
+        print(f" Erro ao salvar: {e}")
+
+
+
 # --- BLOCO 1 ---
 
 catalogo = [
@@ -7,7 +56,8 @@ catalogo = [
 
 ]
 
-def listar_livros():
+def listar_livros(catalogo):
+    salvar_catalogo(catalogo)
     """Exibe todos os livros com numeração e status."""
     print("\n" + "=" * 50)
     print("             CATÁLOGO DA BIBLIOTECA           ")
@@ -25,7 +75,8 @@ def listar_livros():
 
 # --- BLOCO 2 ---
 
-def adicionar_livro():
+def adicionar_livro(catalogo):
+    salvar_catalogo(catalogo)
     """Coleta dados via input e adiciona um novo livro ao catálogo."""
     print("\n--- Adicionar Novo Livro ---")
 
@@ -47,7 +98,8 @@ def adicionar_livro():
 
 # --- BLOCO 3 ---
 
-def buscar_livros():
+def buscar_livros(catalogo):
+    salvar_catalogo(catalogo)
     print("\n--- Buscar Livros ---")
     termo = input("Digite parte do titulo: ").strip().lower()
     try:
@@ -67,8 +119,9 @@ def buscar_livros():
 
 # --- BLOCO 4 ---
 
-def registrar_emprestimo():
-    listar_livros()
+def registrar_emprestimo(catalogo):
+    listar_livros(catalogo)
+    salvar_catalogo(catalogo)
     if not catalogo:
         return
     print("\n--- Registrar Empréstimo ---")
@@ -94,8 +147,9 @@ def registrar_emprestimo():
 
 # --- BLOCO 5 ---
 
-def  devolver_livros():
-    listar_livros()
+def  devolver_livros(catalogo):
+    listar_livros(catalogo)
+    salvar_catalogo(catalogo)
     if not catalogo:
         return
     print("\n--- Registrar Devolução ---")
@@ -149,6 +203,6 @@ def menu():
                 print("\n Até logo!")
                 break
             _, funcao = opcoes[escolha]
-            funcao()
+            funcao(catalogo)
 menu()
 
