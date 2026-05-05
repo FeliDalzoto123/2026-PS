@@ -1,5 +1,5 @@
 # ===============================================
-# SISTEMA DE PEDIDOS DE UM RESTAURANTE
+#     SISTEMA DE PEDIDOS DE UM RESTAURANTE
 # ===============================================
 # Disciplina : Programação de Sistemas (PS)
 # Aula       : 12 - criação do projeto.
@@ -76,7 +76,7 @@ def menu():
         print("\n1 - Cadastrar Cardápio")
         print("2 - Gerenciar Pedidos")
         print("3 - Pagamento")
-        print("4 - Sair")
+        print("0 - Sair")
         opcao = input("Escolha uma opção: ")
         try:
             opcao = opcao.strip()
@@ -89,7 +89,7 @@ def menu():
             gerenciar_pedidos()
         elif opcao == "3":
             pagamento()
-        elif opcao == "4":
+        elif opcao == "0":
             print("Saindo do sistema...")
             break
         else:
