@@ -1,6 +1,6 @@
 '''
 ==================================================================
-# ARQUIVO    : pet.py
+# ARQUIVO    : pet_v2.py
 # Disciplina : Programação de Sistemas (2026-PS)
 # Aula       : Aula 23 - Por que POO?
 # Autor      : Felipe Dalzoto
@@ -76,7 +76,7 @@ class Pet:
         print(self.resumo)
     
     def exibir_raca(self):
-        return self.raca 
+        return self.raca
     
 # -----------------------------------
 # ARQUIVOS
@@ -170,7 +170,8 @@ def Menu():
         print("6 - Relatório de hospedagem")
         print("7 - Salvar em TXT")
         print("8 - Salvar em BINÁRIO")
-        print("9 - Sair")
+        print("9 - Apagar Pet")
+        print("0 - Sair")
         opcao = input("\nEscolha uma opção: ")
 
         if opcao == "1":
@@ -223,6 +224,11 @@ def Menu():
             salvar_em_binario(lista_pets)
 
         elif opcao == "9":
+            pet = escolher_pet(lista_pets)
+            if pet:
+                lista_pets.remove(pet)
+                print(f"{pet.nome} removido com sucesso!")
+        elif opcao == "0":
             salvar_em_binario(lista_pets)
             print("\nPrograma encerrado!")
             break
