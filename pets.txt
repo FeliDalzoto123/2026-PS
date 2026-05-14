@@ -1,0 +1,2 @@
+Coringa, cachorro, 3, sim, desconhecido, 60.0
+Duque, cachorro, 2, sim, desconhecido, 30.0
