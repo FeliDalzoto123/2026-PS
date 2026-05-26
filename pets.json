@@ -1,0 +1,46 @@
+[
+    {
+        "nome": "Galinha",
+        "especie": "galinha",
+        "dataNasc": "30/02/2026",
+        "idade": 1,
+        "peso": 20.0,
+        "altura": 1.75,
+        "nome_dono": "Felipe",
+        "vacinado": false,
+        "hospedado": true
+    },
+    {
+        "nome": "coringa",
+        "especie": "cachorro",
+        "dataNasc": "30/08/2026",
+        "idade": 3,
+        "peso": 30.0,
+        "altura": 0.2,
+        "nome_dono": "felipe",
+        "vacinado": true,
+        "hospedado": true
+    },
+    {
+        "nome": "adsag",
+        "especie": "arga",
+        "dataNasc": "20/08;2010",
+        "idade": 16,
+        "peso": 55.5,
+        "altura": 1.7,
+        "nome_dono": "Felipe",
+        "vacinado": false,
+        "hospedado": false
+    },
+    {
+        "nome": "agsfg",
+        "especie": "afrgasf",
+        "dataNasc": "20/08/2011",
+        "idade": 15,
+        "peso": 22.0,
+        "altura": 0.2,
+        "nome_dono": "felipe",
+        "vacinado": true,
+        "hospedado": false
+    }
+]
