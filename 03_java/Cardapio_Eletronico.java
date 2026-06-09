@@ -33,7 +33,7 @@ public class Cardapio_Eletronico {
         }
     }
 
-    public static String nomeProduto(int opcao){
+    public static String nomeProduto(int opcao) {
         switch (opcao) {
             case 1:
                 return "X-Burguer";
@@ -47,43 +47,107 @@ public class Cardapio_Eletronico {
                 return "Batata Frita";
             case 6:
                 return "Nugget";
-        
+
             default:
                 return "Produto Invalido";
         }
     }
+
+    public static String mostrarResumoPedido(int[] quantidades, double total) {
+    String resumo = "\n======= RESUMO DO PEDIDO =======\n";
+
+    for (int i = 1; i <= 6; i++) {
+        if (quantidades[i] > 0) {
+            resumo += quantidades[i] + "x "
+                    + nomeProduto(i)
+                    + " - R$ "
+                    + String.format("%.2f", preco(i))
+                    + "\n";
+        }
+    }
+
+    resumo += "\nTOTAL DO PEDIDO: R$ "
+            + String.format("%.2f", total);
+
+    return resumo;
+}
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         int opcao;
         double total = 0;
+        int[] quantidades = new int[7];
 
-        do {
-            mostrarCardapio();
+        boolean finalizarPedido = false;
 
-            System.out.print("Escolha uma opção: ");
-            opcao = scanner.nextInt();
+while (!finalizarPedido) {
 
-            if (opcao >= 1 && opcao <= 6) {
-                total += preco(opcao);
-                System.out.println(nomeProduto(opcao) + " adicionado ao pedido!");
-            } else if (opcao != 0) {
-                System.out.println("Opção inválida!");
-            }
+    mostrarCardapio();
 
-        } while (opcao != 0);
-            System.out.println("Deseja Finalizar o Pedido?");
-            System.out.println("1 - Finalizar");
-            System.out.println("2- Voltar para o Cardapio");
+    System.out.print("Escolha uma opção: ");
+    opcao = scanner.nextInt();
 
-            
-            
-            
+    if (opcao >= 1 && opcao <= 6) {
+
+        total += preco(opcao);
+        quantidades[opcao]++;
+
+        System.out.println(nomeProduto(opcao) + " adicionado ao pedido!");
+
+    } else if (opcao == 0) {
+
+        System.out.println("\n===== FINALIZAR PEDIDO =====");
+        System.out.println("1 - Continuar comprando");
+        System.out.println("2 - Finalizar pedido");
+        System.out.print("Escolha uma opção: ");
+
+        int escolha = scanner.nextInt();
+
+        if (escolha == 1) {
+
+            System.out.println("\nVoltando ao cardápio...");
+
+        } else if (escolha == 2) {
+
+            finalizarPedido = true;
+
+        } else {
+
+            System.out.println("Opção inválida!");
         }
 
-        System.out.printf("\nTotal do pedido: R$ %.2f%n", total);
+    } else {
 
-        scanner.close();
+        System.out.println("Opção inválida!");
+    }
+}
+System.out.println(mostrarResumoPedido(quantidades, total));
+
+System.out.println("\n======= PAGAMENTO =======");
+System.out.println("1 - Pix");
+System.out.println("2 - Cartão");
+System.out.println("3 - Dinheiro");
+System.out.print("Escolha a forma de pagamento: ");
+
+int pagamento = scanner.nextInt();
+
+switch (pagamento) {
+    case 1:
+        System.out.println("Pagamento via Pix realizado com sucesso!");
+        break;
+
+    case 2:
+        System.out.println("Pagamento via Cartão realizado com sucesso!");
+        break;
+
+    case 3:
+        System.out.println("Pagamento em Dinheiro selecionado!");
+        break;
+
+    default:
+        System.out.println("Forma de pagamento inválida!");
+}
+scanner.close();
     }
 }
