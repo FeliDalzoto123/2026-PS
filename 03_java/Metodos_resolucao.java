@@ -95,9 +95,6 @@ public class Metodos_resolucao {
         } else{
             exibirProduto(nome, preco);
         }
-
-
-
         
         scanner.close();
 
