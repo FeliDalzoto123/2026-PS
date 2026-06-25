@@ -31,6 +31,15 @@ public class Metodos_resolucao {
         return a1 + b1;
     }
 
+    static void exibirPodutos(String nomes){
+        System.out.println("Produtos: " + nomes);
+    }
+
+    static void exibirProduto(String nome, double preco) {
+        System.out.println("Produto: " + nome);
+        System.out.printf("Preço: R$ %.2f%n", preco);
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -75,8 +84,21 @@ public class Metodos_resolucao {
 
         //Problema 5 //
 
-        
+        System.out.print("Digite o nome do produto: ");
+        String nome = scanner.next();
 
+        System.out.print("Digite o preço do produto: ");
+        double preco = scanner.nextDouble();
+
+        if(preco == 0){
+            exibirPodutos(nome);
+        } else{
+            exibirProduto(nome, preco);
+        }
+
+
+
+        
         scanner.close();
 
     }
