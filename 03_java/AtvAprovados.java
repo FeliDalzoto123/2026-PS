@@ -39,7 +39,6 @@ public class AtvAprovados {
         }
         System.out.println(verificacao(valores));
 
-
         scanner.close();
     }
     
