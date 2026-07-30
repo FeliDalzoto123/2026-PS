@@ -41,6 +41,14 @@ public class Alunos {
         return situacao;
     }
 
+    public String resumo(){
+        return nome + " - " + curso + "("+ situacao + ")";
+    }
+
+    public boolean comparacao(Alunos outro){
+        return this.matricula == outro.matricula;
+    }
+
     public void setsituacao(String situacao){
         if (situacao.equals("Ativo") ||
             situacao.equals("Trancado") ||
@@ -82,6 +90,16 @@ public class Alunos {
 
         alunos1.exibirDados();
         alunos2.exibirDados();
-        alunos3.exibirDados();   
+        alunos3.exibirDados();
+        
+        System.out.println("RESUMO");
+        System.out.println(alunos1.resumo());
+        System.out.println(alunos2.resumo());
+        System.out.println(alunos3.resumo());
+        System.out.println();
+        System.out.println("COMPARAÇÃO");
+        System.out.println(alunos1.comparacao(alunos2));
+        System.out.println(alunos2.comparacao(alunos3));
+        System.out.println(alunos1.comparacao(alunos3));
     }
 }
