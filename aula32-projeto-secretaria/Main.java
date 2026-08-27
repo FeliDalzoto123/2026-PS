@@ -17,15 +17,16 @@ public class Main{
         ArrayList<Aluno> lista = new ArrayList<Aluno>();
 
         while (true){
-            System.out.println("========================================");
-            System.out.println("   SECRETARIA DO SEU NOME");
-            System.out.println("========================================");
+            System.out.println("===============================================");
+            System.out.println("   SECRETARIA DO CAMPUS - por FELIPE DALZOTO");
+            System.out.println("===============================================");
             System.out.println("[1] Cadastrar aluno");
             System.out.println("[2] Listar alunos");
             System.out.println("[3] Buscar por matricula");
             System.out.println("[4] Atualizar curso");
             System.out.println("[5] Remover Aluno");
             System.out.println("[6] Relatorio");
+            System.out.println("[7] Buscar Nome");
             System.out.println("[0] Sair");
             System.out.print("Sua escolha: ");
             String opcao = teclado.nextLine().trim();
@@ -45,6 +46,8 @@ public class Main{
                 remover(lista, teclado);
             }else if(opcao.equals("6")){
                 relatorio(lista, teclado);
+            }else if(opcao.equals("7")){
+                buscar_nome(lista, teclado);
             }else{
                 System.out.println("Opcao invalida! Vale 0, 1, 2, 3, 4, 5 ou 6.");
             }
@@ -158,4 +161,27 @@ public class Main{
         System.out.println("Alunos de " + curso + ": " + contador);
     }
 
+    static void buscar_nome(ArrayList<Aluno> lista, Scanner teclado){
+        System.out.println("Nome procurado: ");
+        String Nome = teclado.nextLine().trim();
+        Aluno a = buscarPorNome(lista, Nome);
+
+        if(a == null){
+            System.out.println("Nenhuma ficha com a matricula " + Nome + ".");
+        }else{
+            System.out.println("Achei: " + a);
+        }
+    }
+
+    static Aluno buscarPorNome(ArrayList<Aluno> lista, String nome){
+        for (int i = 0; i < lista.size(); i++){
+            Aluno a = lista.get(i);
+            
+            if (a.getNome().equals(nome)) {
+                return a;
+            }
+
+        }
+        return null;
+    }
 }
