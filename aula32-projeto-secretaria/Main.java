@@ -49,7 +49,7 @@ public class Main{
             }else if(opcao.equals("7")){
                 buscar_nome(lista, teclado);
             }else{
-                System.out.println("Opcao invalida! Vale 0, 1, 2, 3, 4, 5 ou 6.");
+                System.out.println("Opcao invalida! Vale 0, 1, 2, 3, 4, 5, 6 ou 7.");
             }
         }
 
