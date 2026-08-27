@@ -1,5 +1,5 @@
-Link do repositorio: 
-Conceito pretendido: b 
+Link do repositorio: https://github.com/FeliDalzoto123/2026-PS/tree/43e42dbf1702def6dc340ffcc1a1478ee049b807
+Conceito pretendido: B
 Por que este conceito:
 - Criterio 1 (classe e encapsulamento): Aluno.java, linha 25 — o getter serve para pegar um valor e armagenar na variavel nome do aluno.
 - Criterio 2 (colecao e menu): Main.java, linha 17 — usei um ArrayList<Aluno> para armazenar os alunos cadastrados e tambem criei um menu com opções para cadastrar, listar, buscar, atualizar, remover e gerar relatório.
