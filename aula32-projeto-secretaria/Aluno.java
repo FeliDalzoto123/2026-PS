@@ -45,4 +45,10 @@ public class Aluno{
     public void setCurso(String curso){
         this.curso = curso;
     }
+
+    @Override
+    public String toString(){
+        return matricula + " | " + nome + " | " + curso + " | "  + cidade;
+        
+    }
 }
