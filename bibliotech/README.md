@@ -4,7 +4,7 @@ Sistema de emprestimo de livros para a biblioteca do campus.
 ​
 ## 1. O projeto
 ​
-(escreva aqui, com as suas palavras: quem e o cliente, qual problema o sistema resolve e para quem)
+O cliente é a biblioteca do campus. O sistema resolve o problema de organizar livros, leitores, empréstimos e devoluções, facilitando o trabalho das bibliotecárias e dos leitores.
 
 ## 2. Historias de usuario
 ​
@@ -27,7 +27,7 @@ Sistema de emprestimo de livros para a biblioteca do campus.
 | RF03 | O sistema deve permitir que o leitor consulte a disponibilidade de um livro. | HU01 |
 | RF04 | O sistema deve permitir que a bibliotecaria registre a devolucao de um livro. | HU02 |
 | RF05 | O sistema deve permitir que a bibliotecaria registre o emprestimo de um livro. | HU03 |
-| RF06 | (o seu: escreva aqui) | (de onde veio) |
+| RF06 | O sistema deve permitir que a bibliotecária consulte os livros atualmente emprestados. | HU05 |
 ​
 ### Requisitos nao funcionais
 ​
