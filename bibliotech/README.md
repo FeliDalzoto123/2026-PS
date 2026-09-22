@@ -36,3 +36,7 @@ O cliente é a biblioteca do campus. O sistema resolve o problema de organizar l
 | RNF01 | A consulta de disponibilidade deve responder em menos de 3 segundos. |
 | RNF02 | Somente usuarios identificados como bibliotecarios podem alterar o acervo. |
 
+## 5. O que o codigo devolveu ao diagrama (Aula 37)
+
+- Livro ganhou o atributo disponivel: Boolean, porque estaDisponivel()prescisa guardar o estado.
+- Leitor ganhou livrosEmMaos: int, porque podePegarEmprestado() compara com o limite.
